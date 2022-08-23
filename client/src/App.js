@@ -32,7 +32,7 @@ function App() {
     return (
       <div className="App" style={{ backgroundColor: "lightgrey" }}>
         
-        {/* <NavBar setLoggedInUser={setLoggedInUser}/> */}
+      
 
       <Routes>
         <Route path="/" element={<Home />} />
