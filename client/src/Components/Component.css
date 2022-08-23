@@ -1,0 +1,338 @@
+.slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 500px;
+    left: -10%;
+  }
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+    left: -10%;
+  }
+  
+  .slide {
+    display: inline-block;
+  
+    height: 400px;
+    width: 100%;
+    border-radius: 40px;
+  }
+  
+  /* Buttons */
+.slideshowDots {
+    text-align: center;
+  }
+  .slideshowDot {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 15px 7px 0px;
+    background-color: #c4c4c4;
+  }
+
+  .slideshowDot.active {
+    background-color: #6a0dad;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+
+  #container {
+    border: 1px solid black;
+    padding: 15px;
+ }
+ 
+ #top-section {
+   border-bottom: 1px solid red;
+ }
+ 
+ #expand-container {
+   overflow: hidden;
+ }
+ 
+ #expand-contract {
+   border-bottom: 1px solid red;
+  cursor: pointer;
+   transition: all 1s;
+ }
+ 
+.comments {
+  display:flex;
+  
+}
+#comments-containers {
+  order: 1px solid black;
+}
+
+.ciContainer {
+  display: flex;
+  flex-direction: row;
+  height: 0px;
+}
+.ciContainer img {
+  padding-top: 12.5px;
+}
+.ciContainer div {
+  margin: 0%;
+}
+
+.grid-for-items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-for-items div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.forumlinkbox {
+  width: 500px;
+  height: 300px;
+  border: 5px solid black;
+  padding: 50px;
+  margin: auto;
+}
+
+#forum_page {
+  width: auto;
+  height: auto;
+  border: 5px solid black;
+  padding: 50px;
+  margin: auto;
+}
+
+.forum-post-box {
+  border: 5px solid lightgrey;
+  width: auto;
+  height: auto;
+}
+
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+#form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+#form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+#form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.LoginPage {
+  perspective: 800;
+    -moz-perspective: 800;
+    -webkit-perspective: 800;
+    margin: 1em auto;
+    width: 40%;
+    border: solid 1em white;
+    border-radius: 0.5em;
+    font-family: Georgia;
+    transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    cursor: pointer;
+}
+
+.LoginPage:hover {
+  box-shadow: 0 0 1em black;
+}
+
+.login-form {
+  background: lightblue;
+    color: white;
+    display: block;
+  padding: 1em;
+    text-align: center;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.login-form button {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+.signup-form {
+  background: #66eeff;
+    color: black;
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    display:none;
+    text-align: center ;
+}
+
+.signup-form button {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+.LoginPage.flipped .signup-form{
+  display:block;
+}
+
+.LoginPage.flipped .login-form {
+  display:none;
+}
+
+.LoginPage.flipped {
+  transform: rotatey(-180deg);
+  -moz-transform: rotatey(-180deg);
+  -webkit-transform: rotatey(-180deg);
+}
+#listOfComments > * {
+  margin: 10px;
+  left: 50px;
+}
+
+#upperPortion #userImg{ 
+  right: 25px;
+}
+
+#directoryButtons {
+  display: flex;
+  text-align: center;
+}
+
+#directoryButtons  h3 {
+  padding-left: 200px;
+}
+
+nav * {
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: larger;
+  background-color: #57a1d2;
+  border: 2px solid lightgray;
+  
+}
+#logOut {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  right: -20%;
+} 
+
+.addHov:hover {
+  box-shadow: 0 0 1em black;
+}
+
+.alignDivs {
+  display: flex;
+}
+
+.twoBoxes {
+  display: flex;
+}
+.twoBoxes div {
+  text-align: center;
+  width: 400 px;
+  border: 15px solid rgb(40, 167, 240);
+  padding: 50px;
+  margin: 20px;
+  
+}
+#bankLogo {
+  text-align: center;
+}
+
+#logInButton {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  border: 3px solid rgb(25, 152, 226);
+  color: white;
+  background-color: #2196F3;
+  font-size: 200%;
+}
+#checkingBox {
+  display: flex;
+  border: 3px solid rgb(25, 152, 226);
+  width: auto;
+}
+#checkingBox div {
+  
+  margin-right: 100px;
+  margin-left: 100px;
+
+}
+#alignRight {
+  text-align: right;
+  margin-left: 20%;
+}
+
