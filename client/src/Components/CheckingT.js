@@ -63,8 +63,10 @@ const CheckingT = () => {
 
     let orderedList = currentUser.checkings[0].transactions.sort((a, b) => new Date(...b.date.split('/').reverse()) - new Date(...a.date.split('/').reverse()));
     console.log(orderedList)
+    let prevBal = currentUser.checkings[0].available_balance
+    // prevBal = dollarUS.format(prevBal)
     return (
-        <div style={{ backgroundColor: "lightgrey" }}>
+        <div style={{ backgroundColor: "lightgrey", width: "1000px"}}>
             <div className="bankLogo">
                 <img width="200" height="200" src="https://png.pngtree.com/png-vector/20190214/ourmid/pngtree-vector-bank-icon-png-image_515245.jpg" ></img>
                 <h1>The Bank</h1>
@@ -89,18 +91,24 @@ const CheckingT = () => {
                             </div>
                             <h1 style={{ textAlign: "center" }}> Recent Transactions</h1>
                             
-                                {(orderedList.map((element) => {
+                                {(orderedList.map((element, index) => {
+                                    {prevBal = (prevBal + element.amount)}
                                     return ( 
                                         <div style={{display: "flex", flexDirection: "column"}}>
                                         <div>
                                         <h2>{element.date}</h2>
                                         </div>
                                         <div id="transactionList"> 
-                                        <div style={{display: "flex", flexDirection: "column", width: "400px"}}> 
+                                        <div style={{display: "flex", flexDirection: "column", width: "500px"}}> 
                                         <h3>{element.name}</h3>
                                         <h3>{element.category}</h3>
                                         </div>
-                                        <h3 style={{postion: "relative", textAlign: "right", width: "400px"}}>{element.amount}</h3>
+                                        <div style={{postion: "relative", textAlign: "right", width: "450px"}}>
+                                        <h3>{dollarUS.format(element.amount)}</h3>
+                                         
+                                        <h4>{dollarUS.format(prevBal)}</h4>
+                                        
+                                        </div>
                                     </div>
                                     </div>     
                                 )

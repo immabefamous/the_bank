@@ -21,11 +21,7 @@ function App() {
         r.json().then((user) => 
           {console.log(user)
           if (user !== null) {
-            fetch("/logout", { method: "DELETE" }).then((r) => {
-              if (r.ok) {
-                navigate('/');
-              }
-            });}
+            navigate('/home')}
         });
       }
     });
