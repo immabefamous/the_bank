@@ -336,3 +336,14 @@ nav * {
   margin-left: 20%;
 }
 
+#checkingDiv {
+  display: flex;
+  border: 3px solid rgb(25, 152, 226);
+  width: auto;
+  height: 200px;
+}
+
+#transactionList {
+  display: flex;
+  border: 3px solid rgb(25, 152, 226);
+}

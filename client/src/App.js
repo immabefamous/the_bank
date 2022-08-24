@@ -9,6 +9,8 @@ import Home from "./Components/Home";
 import "./Components/Component.css";
 import SignUp from './Components/SignUp';
 import UsersPage from './Components/UsersPage'
+import CheckingT from './Components/CheckingT';
+import SavingT from './Components/SavingT';
 
 function App() {
   const navigate = useNavigate();
@@ -37,7 +39,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="home" element={<UsersPage />} />
+        <Route path="/home" element={<UsersPage />} />
+        <Route path="/Checkings" element={<CheckingT />} />
+        <Route path="/Savings" element={<SavingT />} />
+
        
         
       </Routes> 

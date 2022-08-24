@@ -1,11 +1,9 @@
+
 import React, { useState, useEffect, useRef } from "react";
-import NavBar from './NavBar';
-import { useNavigate } from "react-router-dom";
+import "./Component.css"
+import NavBar from "./NavBar";
 
-
-
-const UsersPage = () => {
-    const navigate = useNavigate();
+const SavingT = () => {
 
     const [currentUser, setCurrentUser] = useState({
         name: "Loading Info",
@@ -49,7 +47,7 @@ const UsersPage = () => {
         ]
     })
 
-
+    useEffect(() => { getUser() }, [])
     async function getUser() {
         const req = await fetch(`/me`);
         const res = await req.json();
@@ -57,15 +55,14 @@ const UsersPage = () => {
         setCurrentUser(res);
     }
 
-    console.log(currentUser)
     let dollarUS = Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
     });
-
-    useEffect(() => { getUser() }, [])
+    
     return (
         <div style={{ backgroundColor: "lightgrey" }}>
+            
             <div className="bankLogo">
                 <img width="200" height="200" src="https://png.pngtree.com/png-vector/20190214/ourmid/pngtree-vector-bank-icon-png-image_515245.jpg" ></img>
                 <h1>The Bank</h1>
@@ -75,11 +72,9 @@ const UsersPage = () => {
             <div>
                 <h1 id="userName"> Welcome {currentUser.name}</h1>
             </div>
-            <div onClick={() => navigate('/Checkings')}>
-            {console.log(currentUser)}
-            {(currentUser.checkings.map((element) => {
-                return (
-                    <div id="checkingBox">
+        {(currentUser.savings.map((element) => {
+            return (
+        <div id="checkingBox">
                         <div>
                             <h1>CHECKING</h1>
                             <h4>-{element.account_number.toString().substr(5)}</h4>
@@ -89,27 +84,9 @@ const UsersPage = () => {
                             <h4>Current Balance: {dollarUS.format(element.current_balance)}</h4>
                         </div>
                     </div>
-                )
+                    )
             }))}
-            </div >
-            <div onClick={() => navigate('/Savings')}>
-            {currentUser.savings.map((element) => {
-                return (
-                    <div id="checkingBox">
-                        <div>
-                            <h1>Savings</h1>
-                            <h4>-{element.account_number.toString().substr(5)}</h4>
-                        </div>
-                        <div id="alignRight">
-                            <h1>Availbable Balance: {dollarUS.format(element.available_balance)}</h1>
-                            <h4>Current Balance: {dollarUS.format(element.current_balance)}</h4>
-                        </div>
-                    </div>
-                )
-            })}
             </div>
-        </div>
     )
 }
-
-export default UsersPage;
+export default SavingT;
