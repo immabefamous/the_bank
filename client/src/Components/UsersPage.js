@@ -51,7 +51,7 @@ const UsersPage = () => {
 
 
     async function getUser() {
-        const req = await fetch(`/me`);
+        const req = await fetch("https://obscure-earth-36091.herokuapp.com/me");
         const res = await req.json();
         console.log(res)
         setCurrentUser(res);
@@ -75,7 +75,7 @@ const UsersPage = () => {
             <div>
                 <h1 id="userName"> Welcome {currentUser.name}</h1>
             </div>
-            <div onClick={() => navigate('/Checkings')}>
+            <div onClick={() => navigate('"https://obscure-earth-36091.herokuapp.com/checkings')}>
             {console.log(currentUser)}
             {(currentUser.checkings.map((element) => {
                 return (

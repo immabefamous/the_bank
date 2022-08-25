@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom"
 function NavBar({}) {
     const navigate = useNavigate();
     const logOut = () => {
-        fetch("/logout", { method: "DELETE" }).then((r) => {
+        fetch("https://obscure-earth-36091.herokuapp.com/logout", { method: "DELETE" }).then((r) => {
             if (r.ok) {
               navigate('/');
             }
