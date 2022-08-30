@@ -38,7 +38,7 @@ const handleSubmit = (event) => {
         .then((r) => {
             if (r.ok) {
                 r.json().then((user) => {
-                    navigate('"https://obscure-earth-36091.herokuapp.com/home',{state: user});
+                    navigate('/home',{state: user});
                 });
             } else {
                 r.json().then((err) => console.log(err))

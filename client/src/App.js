@@ -16,7 +16,7 @@ function App() {
   const navigate = useNavigate();
   useEffect(() => {
     // auto-login
-    fetch("https://obscure-earth-36091.herokuapp.com/me").then((r) => {
+    fetch("/me").then((r) => {
     // fetch("./me").then((r) => {
       if (r.ok) {
         r.json().then((user) => 
