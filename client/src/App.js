@@ -16,8 +16,8 @@ function App() {
   const navigate = useNavigate();
   useEffect(() => {
     // auto-login
-    fetch("/me").then((r) => {
-    // fetch("./me").then((r) => {
+    
+    fetch("./me").then((r) => {
       if (r.ok) {
         r.json().then((user) => 
           {console.log(user)
