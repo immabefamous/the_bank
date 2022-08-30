@@ -17,7 +17,7 @@ const Home = () => {
                 <h1>The Bank</h1>
                 <h3>It's The Bank You Can trust</h3>
             </div>
-            
+            {/* no more hrefs */}
             <button id="logInButton" onClick={() => navigate('/signup')} > Log In or Sign Up </button>
 
             <div id="bankLogo">
