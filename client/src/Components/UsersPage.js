@@ -51,7 +51,7 @@ const UsersPage = () => {
 
 
     async function getUser() {
-        const req = await fetch("https://obscure-earth-36091.herokuapp.com/me");
+        const req = await fetch("/me");
         const res = await req.json();
         console.log(res)
         setCurrentUser(res);
