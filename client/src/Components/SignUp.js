@@ -38,7 +38,7 @@ const handleSubmit = (event) => {
         .then((r) => {
             if (r.ok) {
                 r.json().then((user) => {
-                    navigate('./home',{state: user});
+                    navigate('/home',{state: user});
                 });
             } else {
                 r.json().then((err) => console.log(err))
